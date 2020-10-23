@@ -1,0 +1,27 @@
+{
+  "name": "toyreact",
+  "version": "1.0.0",
+  "description": "ToyReact",
+  "scripts": {
+    "build": "npx webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/astrocean/ToyReact.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/astrocean/ToyReact/issues"
+  },
+  "homepage": "https://github.com/astrocean/ToyReact#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-transform-react-jsx": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "babel-loader": "^8.1.0",
+    "html-webpack-plugin": "^5.0.0-alpha.6",
+    "webpack": "^5.2.0",
+    "webpack-cli": "^4.1.0"
+  }
+}
