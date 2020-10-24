@@ -1,5 +1,5 @@
 import {createElement,render,Component} from './toy-react';
-
+import Game from './ tic-tac-toe';
 class MyComponent extends Component{
     constructor(){
         super();
@@ -23,21 +23,27 @@ class MyComponent extends Component{
     }
 }
 
+// render(
+//     <div>
+//         <MyComponent>
+//             <div
+//                 id='container'
+//                 class='container'
+//             >
+//                 <h1>ToyReact</h1>
+//                 <div>
+//                     <div>主题1</div>
+//                     <div>主题2</div>
+//                 </div>
+//                 <div></div>
+//             </div>
+//             <Game/>
+//         </MyComponent>
+//     </div>,
+//     document.getElementById("root")
+// );
+
 render(
-    <div>
-        <MyComponent>
-            <div
-                id='container'
-                class='container'
-            >
-                <h1>ToyReact</h1>
-                <div>
-                    <div>主题1</div>
-                    <div>主题2</div>
-                </div>
-                <div></div>
-            </div>
-        </MyComponent>
-    </div>,
-    document.body
+    <Game/>,
+    document.getElementById("root")
 );

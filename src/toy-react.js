@@ -34,6 +34,16 @@ export class Component{
     reRender(){
         this._range.deleteContents();
         this[RENDER_TO_DOM](this._range);
+
+        //range bug处理  但是我没有遇到 所以先去掉
+        // let oldRange=this._range;
+        // let newRange =document.createRange();
+        // range.setStart(oldRange.startContainer,oldRange.startOffset);
+        // range.setEnd(oldRange.endContainer,oldRange.endOffset);
+        // this[RENDER_TO_DOM](newRange);
+
+        // oldRange.setStart(newRange.endContainer,newRange.endOffset);
+        // oldRange.deleteContents();
     }
     [RENDER_TO_DOM](range){
         this._range=range;
@@ -58,8 +68,11 @@ class ElementWrapper{
                 return word.toLowerCase();
             }),value);
         }else{
+            if(name==='className'){
+                name='class';
+            }
             this.root.setAttribute(name,value);
-        }
+        } 
     }
     appendChild(component){
         let range=document.createRange();
@@ -98,6 +111,9 @@ export const createElement=(type,attributes,...children)=>{
         for(let child of _children){
             if(typeof child ==='string'){
                 child=new TextWrapper(child);
+            }
+            if(child===null){
+                continue;
             }
             if(typeof child === 'object' && child instanceof Array){
                 appendChildren(child); 
